@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="1280.0" style="-fx-background-color: transparent;" styleClass="root" stylesheets="@mystyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.Controller">
+   <children>
+      <AnchorPane prefHeight="56.0" prefWidth="1280.0" style="-fx-background-color: #0f9d58;">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1168.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="992.0" layoutY="15.0" prefHeight="25.0" prefWidth="85.0" text="Welcome," textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbSurname" layoutX="1069.0" layoutY="15.0" prefHeight="25.0" prefWidth="85.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@box%20ic.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="44.0" fitWidth="68.0" layoutX="58.0" layoutY="8.0" pickOnBounds="true">
+               <image>
+                  <Image url="@box.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="506.0" layoutY="18.0" prefHeight="25.0" prefWidth="268.0" text="Inventory Management" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="closebtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" defaultButton="true" layoutX="1222.0" layoutY="11.0" onAction="#closebtnclicked" prefHeight="25.0" prefWidth="25.0" ripplerFill="RED" style="-fx-background-color: white;" text="        ">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="28.0">
+                     <image>
+                        <Image url="@close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="lbInfo" layoutX="160.0" layoutY="68.0" prefHeight="648.0" prefWidth="1120.0" style="-fx-background-color: white;">
+         <children>
+            <JFXTextField fx:id="categoryTf" focusColor="#77c2bb" layoutX="24.0" layoutY="118.0" maxWidth="231.0" minWidth="268.0" prefHeight="31.0" prefWidth="231.0" promptText="Category" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font></JFXTextField>
+            <Label layoutX="24.0" layoutY="303.0" prefHeight="17.0" prefWidth="201.0" />
+            <JFXButton fx:id="addInvBtn" layoutX="24.0" layoutY="313.0" onAction="#addInvClicked" prefHeight="35.0" prefWidth="75.0" text="ADD" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@add.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="editInvBtn" layoutX="108.0" layoutY="313.0" onAction="#editInvClicked" prefHeight="35.0" prefWidth="75.0" style="-fx-background-color: #1565c0;" text="EDIT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXTextField fx:id="productIDTf" focusColor="#77c2bb" layoutX="24.0" layoutY="86.0" maxWidth="231.0" minWidth="268.0" prefHeight="31.0" prefWidth="231.0" promptText="ProductID" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font></JFXTextField>
+            <JFXButton fx:id="deleteInvBtn" layoutX="193.0" layoutY="313.0" onAction="#deleteInvClicked" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #d32f2f;" text="DELETE" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <TableView fx:id="inventoryTableView" layoutX="308.0" layoutY="57.0" prefHeight="271.0" prefWidth="780.0" stylesheets="@../settings/treeView.css">
+               <columns>
+                  <TableColumn fx:id="invProductIDCol" minWidth="0.0" prefWidth="145.0" text="ProductID" />
+                  <TableColumn fx:id="invProductCol" prefWidth="168.0" text="Product" />
+                  <TableColumn fx:id="invCategoryCol" prefWidth="138.0" text="Category" />
+                  <TableColumn fx:id="invQuantityCol" prefWidth="149.0" text="Quantity" />
+                  <TableColumn fx:id="invPriceCol" minWidth="0.0" prefWidth="145.0" text="Price" />
+                  <TableColumn fx:id="invVendorCol" prefWidth="166.0" text="Vendor" />
+               </columns>
+               <styleClass>
+                  <String fx:value="tree-table-cell" />
+                  <String fx:value="arrow" />
+                  <String fx:value="column-header-background" />
+                  <String fx:value="column-header" />
+                  <String fx:value="column-overlay" />
+                  <String fx:value="jfx-text-field" />
+                  <String fx:value="filler" />
+                  <String fx:value="jfx-rippler" />
+                  <String fx:value="tree-table-view" />
+                  <String fx:value="tree-table-row-cell" />
+                  <String fx:value="arrow" />
+                  <String fx:value="tree-disclosure-node" />
+                  <String fx:value="sort-order-dot" />
+                  <String fx:value="root" />
+                  <String fx:value="column-drag-header" />
+                  <String fx:value="column-resize-line" />
+                  <String fx:value="label" />
+               </styleClass>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="deliveryTableView" layoutX="319.0" layoutY="394.0" prefHeight="236.0" prefWidth="780.0" stylesheets="@../settings/treeView.css">
+               <columns>
+                  <TableColumn fx:id="deliveryIDCol" minWidth="0.0" prefWidth="145.0" text="DeliveryID" />
+                  <TableColumn fx:id="productCol" prefWidth="168.0" text="Product" />
+                  <TableColumn fx:id="quantityCol" prefWidth="138.0" text="Quantity" />
+                  <TableColumn fx:id="dateCol" prefWidth="149.0" text="Delivery Date" />
+                  <TableColumn fx:id="statusCol" minWidth="0.0" prefWidth="145.0" text="Status" />
+                  <TableColumn fx:id="vendorCol" prefWidth="166.0" text="Vendor" />
+               </columns>
+               <styleClass>
+                  <String fx:value="tree-table-cell" />
+                  <String fx:value="arrow" />
+                  <String fx:value="column-header-background" />
+                  <String fx:value="column-header" />
+                  <String fx:value="column-overlay" />
+                  <String fx:value="jfx-text-field" />
+                  <String fx:value="filler" />
+                  <String fx:value="jfx-rippler" />
+                  <String fx:value="tree-table-view" />
+                  <String fx:value="tree-table-row-cell" />
+                  <String fx:value="arrow" />
+                  <String fx:value="tree-disclosure-node" />
+                  <String fx:value="sort-order-dot" />
+                  <String fx:value="root" />
+                  <String fx:value="column-drag-header" />
+                  <String fx:value="column-resize-line" />
+                  <String fx:value="label" />
+               </styleClass>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <JFXTextField fx:id="descriptionTf" focusColor="#77c2bb" layoutX="22.0" layoutY="256.0" maxWidth="268.0" minWidth="208.0" prefHeight="56.0" prefWidth="268.0" promptText="Description" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="quantityTf" focusColor="#77c2bb" layoutX="24.0" layoutY="154.0" maxWidth="231.0" minWidth="268.0" prefHeight="31.0" prefWidth="231.0" promptText="Quantity" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="deliveryIdTf" focusColor="#77c2bb" layoutX="24.0" layoutY="393.0" maxWidth="268.0" minWidth="208.0" prefHeight="35.0" prefWidth="268.0" promptText="DeliveryID" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="productDelTf" focusColor="#77c2bb" layoutX="27.0" layoutY="428.0" maxWidth="268.0" minWidth="208.0" prefHeight="35.0" prefWidth="268.0" promptText="Product" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="quantityDelTf" focusColor="#77c2bb" layoutX="27.0" layoutY="463.0" maxWidth="268.0" minWidth="208.0" prefHeight="35.0" prefWidth="268.0" promptText="Quantity" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="statustf" focusColor="#77c2bb" layoutX="27.0" layoutY="553.0" maxWidth="268.0" minWidth="208.0" prefHeight="35.0" prefWidth="268.0" promptText="Status" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="lb4" alignment="CENTER" layoutX="52.0" layoutY="365.0" prefHeight="19.0" prefWidth="201.0" text="New Delivery" textFill="#0f9d58">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="addDelBtn" layoutX="39.0" layoutY="587.0" onAction="#addDelClicked" prefHeight="35.0" prefWidth="75.0" text="ADD" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="editDelBtn" layoutX="123.0" layoutY="587.0" onAction="#editDelClicked" prefHeight="35.0" prefWidth="75.0" style="-fx-background-color: #0d47a1;" text="EDIT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="deleteDelBtn" layoutX="208.0" layoutY="587.0" onAction="#deleteDelClicked" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #d32f2f;" text="DELETE" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXTextField fx:id="searchDelTf" focusColor="#77c2bb" layoutX="927.0" layoutY="357.0" maxWidth="231.0" minWidth="163.0" onKeyReleased="#deliverySearchProduct" prefHeight="35.0" prefWidth="163.0" promptText="Search Product" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="searchInvTf" focusColor="#77c2bb" labelFloat="true" layoutX="927.0" layoutY="21.0" maxWidth="231.0" minWidth="163.0" onKeyReleased="#invSearchProduct" prefHeight="35.0" prefWidth="163.0" promptText="Search Product" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="priceTf" focusColor="#77c2bb" layoutX="27.0" layoutY="193.0" maxWidth="231.0" minWidth="268.0" prefHeight="31.0" prefWidth="231.0" promptText="Price" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="vendorTf" focusColor="#77c2bb" layoutX="24.0" layoutY="228.0" maxWidth="231.0" minWidth="268.0" prefHeight="31.0" prefWidth="231.0" promptText="Vendor" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXDatePicker fx:id="datedp" defaultColor="#0f9d58" layoutX="27.0" layoutY="498.0" prefHeight="31.0" prefWidth="268.0" promptText="Delivery Date">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXDatePicker>
+            <JFXTextField fx:id="vendorDelTf" focusColor="#77c2bb" layoutX="39.0" layoutY="524.0" maxWidth="231.0" minWidth="231.0" prefHeight="25.0" prefWidth="231.0" promptText="Vendor" unFocusColor="#0f9d58">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXComboBox fx:id="productCb" layoutX="28.0" layoutY="61.0" onAction="#setCbValues" prefHeight="27.0" prefWidth="256.0" promptText="Product" style="-fx-border-color: #0f9d58;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXComboBox>
+            <Label fx:id="lb1" alignment="CENTER" layoutX="35.0" layoutY="26.0" prefHeight="25.0" prefWidth="161.0" text="Add Product" textFill="#0f9d58">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb2" alignment="CENTER" layoutX="528.0" layoutY="26.0" prefHeight="25.0" prefWidth="161.0" text="INVENTORY" textFill="#0f9d58">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb3" alignment="CENTER" layoutX="537.0" layoutY="362.0" prefHeight="25.0" prefWidth="161.0" text="DELIVERY " textFill="#0f9d58">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutY="68.0" prefHeight="648.0" prefWidth="147.0" style="-fx-background-color: #0f9d58;">
+         <children>
+            <JFXButton fx:id="salesBtn" onAction="#salesClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="     Sales" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@Sales.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="purchaseBtn" layoutY="67.0" onAction="#purchaseClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Purchases" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@purchase.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="inventoryBtn" layoutY="134.0" onAction="#inventoryClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Inventory" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="34.0">
+                     <image>
+                        <Image url="@inventory.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="reportsBtn" layoutY="268.0" onAction="#reportsClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Reports" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@reports.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="settingsBtn" layoutY="335.0" onAction="#settingsClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="    Settings" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="accountsBtn" layoutY="201.0" onAction="#accountsClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@../settings/mystyle.css" text="    Accounts" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@../settings/accounts.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
