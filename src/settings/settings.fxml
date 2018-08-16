@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1280.0" style="-fx-background-color: transparent;" styleClass="root" stylesheets="@mystyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings.Controller">
+   <children>
+      <AnchorPane layoutY="-3.0" prefHeight="56.0" prefWidth="1280.0" style="-fx-background-color: #0f9d58;">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1168.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="992.0" layoutY="15.0" prefHeight="25.0" prefWidth="85.0" text="Welcome," textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbSurname" layoutX="1069.0" layoutY="15.0" prefHeight="25.0" prefWidth="85.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@box%20ic.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="44.0" fitWidth="68.0" layoutX="58.0" layoutY="8.0" pickOnBounds="true">
+               <image>
+                  <Image url="@box.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="506.0" layoutY="18.0" prefHeight="25.0" prefWidth="268.0" text="Inventory Management" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="closebtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" defaultButton="true" layoutX="1222.0" layoutY="11.0" onAction="#closebtnclicked" prefHeight="25.0" prefWidth="25.0" ripplerFill="RED" style="-fx-background-color: white;" text="        ">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="28.0">
+                     <image>
+                        <Image url="@close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="lbInfo" layoutX="160.0" layoutY="68.0" prefHeight="622.0" prefWidth="1120.0" style="-fx-background-color: white;">
+         <children>
+            <JFXPasswordField fx:id="passwordTf" focusColor="#77c2bb" labelFloat="true" layoutX="22.0" layoutY="215.0" maxWidth="231.0" minWidth="208.0" prefHeight="31.0" prefWidth="231.0" promptText="password" unFocusColor="#0f9d58" />
+            <JFXPasswordField fx:id="cPasswordTf" focusColor="#77c2bb" labelFloat="true" layoutX="24.0" layoutY="259.0" maxWidth="231.0" minWidth="208.0" prefHeight="31.0" prefWidth="231.0" promptText="Confirm password" unFocusColor="#0f9d58" />
+            <JFXTextField fx:id="usernameTf" focusColor="#77c2bb" labelFloat="true" layoutX="24.0" layoutY="177.0" maxWidth="231.0" minWidth="208.0" prefHeight="31.0" prefWidth="231.0" promptText="username" unFocusColor="#0f9d58" />
+            <Label layoutX="24.0" layoutY="303.0" prefHeight="17.0" prefWidth="201.0" />
+            <JFXButton fx:id="addBtn" layoutX="24.0" layoutY="355.0" onAction="#addClicked" prefHeight="44.0" prefWidth="100.0" text="ADD" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@add.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXCheckBox fx:id="adminCbox" layoutX="24.0" layoutY="312.0" text="Administrator?" unCheckedColor="#77c2bb" />
+            <JFXButton fx:id="editBtn" layoutX="146.0" layoutY="355.0" onAction="#editClicked" prefHeight="44.0" prefWidth="100.0" text="EDIT" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXTextField fx:id="sNameTf" focusColor="#77c2bb" labelFloat="true" layoutX="24.0" layoutY="99.0" maxWidth="231.0" minWidth="208.0" prefHeight="31.0" prefWidth="231.0" promptText="surname" unFocusColor="#0f9d58" />
+            <JFXTextField fx:id="fNameTf" focusColor="#77c2bb" labelFloat="true" layoutX="24.0" layoutY="56.0" maxWidth="231.0" minWidth="208.0" prefHeight="31.0" prefWidth="231.0" promptText="first name" unFocusColor="#0f9d58" />
+            <JFXButton fx:id="deleteBtn" layoutX="87.0" layoutY="416.0" onAction="#deleteClicked" prefHeight="44.0" prefWidth="100.0" style="-fx-background-color: #d32f2f;" text="DELETE" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXTextField fx:id="employeeIdTf" focusColor="#77c2bb" labelFloat="true" layoutX="24.0" layoutY="139.0" maxWidth="231.0" minWidth="208.0" prefHeight="31.0" prefWidth="231.0" promptText="Employee ID" unFocusColor="#0f9d58" />
+            <TableView fx:id="userTableView" layoutX="270.0" layoutY="64.0" prefHeight="430.0" prefWidth="810.0" stylesheets="@treeView.css">
+               <columns>
+                  <TableColumn fx:id="employeeIDColumn" minWidth="0.0" prefWidth="145.0" text="Employee ID" />
+                  <TableColumn fx:id="firstNameColumn" prefWidth="168.0" text="First Name" />
+                  <TableColumn fx:id="surnameColumn" prefWidth="138.0" text="Surname" />
+                  <TableColumn fx:id="userNameColumn" prefWidth="149.0" text="Username" />
+                  <TableColumn fx:id="passwordColumn" minWidth="0.0" prefWidth="145.0" text="Password" />
+                  <TableColumn fx:id="userTypeColumn" prefWidth="166.0" text="User Type" />
+               </columns>
+               <styleClass>
+                  <String fx:value="tree-table-cell" />
+                  <String fx:value="arrow" />
+                  <String fx:value="column-header-background" />
+                  <String fx:value="column-header" />
+                  <String fx:value="column-overlay" />
+                  <String fx:value="jfx-text-field" />
+                  <String fx:value="filler" />
+                  <String fx:value="jfx-rippler" />
+                  <String fx:value="tree-table-view" />
+                  <String fx:value="tree-table-row-cell" />
+                  <String fx:value="arrow" />
+                  <String fx:value="tree-disclosure-node" />
+                  <String fx:value="sort-order-dot" />
+                  <String fx:value="root" />
+                  <String fx:value="column-drag-header" />
+                  <String fx:value="column-resize-line" />
+                  <String fx:value="label" />
+               </styleClass>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <JFXTextField fx:id="searchTf" focusColor="#77c2bb" labelFloat="true" layoutX="915.0" layoutY="23.0" maxWidth="231.0" minWidth="165.0" onKeyReleased="#searchEmployeeID" prefHeight="31.0" prefWidth="165.0" promptText="Search ID" unFocusColor="#0f9d58" />
+            <Label fx:id="lb1" alignment="CENTER" layoutX="466.0" layoutY="26.0" prefHeight="25.0" prefWidth="188.0" text="USER INFORMATION" textFill="#0f9d58">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lb2" alignment="CENTER" layoutX="31.0" layoutY="26.0" prefHeight="25.0" prefWidth="188.0" text="NEW USER" textFill="#0f9d58">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutY="68.0" prefHeight="622.0" prefWidth="147.0" style="-fx-background-color: #0f9d58;">
+         <children>
+            <JFXButton fx:id="salesBtn" onAction="#salesClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="     Sales" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@Sales.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="purchaseBtn" layoutY="67.0" onAction="#purchaseClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Purchases" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@purchase.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="inventoryBtn" layoutY="134.0" onAction="#inventoryClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Inventory" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="34.0">
+                     <image>
+                        <Image url="@inventory.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="reportsBtn" layoutY="268.0" onAction="#reportsClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Reports" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@reports.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="settingsBtn" layoutY="335.0" onAction="#settingsClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="    Settings" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="accountsBtn" layoutX="-2.0" layoutY="201.0" onAction="#accountsClicked" prefHeight="67.0" prefWidth="152.0" stylesheets="@mystyle.css" text="    Accounts" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@accounts.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
