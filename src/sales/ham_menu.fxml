@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="551.0" prefWidth="141.0" style="-fx-background-color: #0f9d58;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton prefHeight="67.0" prefWidth="141.0" text="     Sales" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0">
+               <image>
+                  <Image url="@Sales.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Century Gothic" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutY="67.0" prefHeight="67.0" prefWidth="141.0" text="   Purchases" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0">
+               <image>
+                  <Image url="@purchase.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutY="134.0" prefHeight="67.0" prefWidth="141.0" text="   Inventory" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="34.0">
+               <image>
+                  <Image url="@inventory.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutY="201.0" prefHeight="67.0" prefWidth="141.0" text="   Reports" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0">
+               <image>
+                  <Image url="@reports.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutY="268.0" prefHeight="67.0" prefWidth="141.0" text="    Settings" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0">
+               <image>
+                  <Image url="@settings.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

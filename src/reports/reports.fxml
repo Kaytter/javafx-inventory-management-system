@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1280.0" style="-fx-background-color: transparent;" styleClass="root" stylesheets="@mystyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reports.Controller">
+   <children>
+      <AnchorPane layoutY="-3.0" prefHeight="56.0" prefWidth="1280.0" style="-fx-background-color: #0f9d58;">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1168.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="992.0" layoutY="15.0" prefHeight="25.0" prefWidth="85.0" text="Welcome," textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbSurname" layoutX="1069.0" layoutY="15.0" prefHeight="25.0" prefWidth="85.0" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@box%20ic.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="44.0" fitWidth="68.0" layoutX="58.0" layoutY="8.0" pickOnBounds="true">
+               <image>
+                  <Image url="@box.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="506.0" layoutY="18.0" prefHeight="25.0" prefWidth="268.0" text="Inventory Management" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="closebtn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" defaultButton="true" layoutX="1222.0" layoutY="11.0" onAction="#closebtnclicked" prefHeight="25.0" prefWidth="25.0" ripplerFill="RED" style="-fx-background-color: white;" text="        ">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="28.0">
+                     <image>
+                        <Image url="@close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="lbInfo" layoutX="160.0" layoutY="68.0" prefHeight="622.0" prefWidth="1120.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="24.0" layoutY="303.0" prefHeight="17.0" prefWidth="201.0" />
+            <Label fx:id="lb2" alignment="CENTER" layoutX="466.0" layoutY="46.0" prefHeight="25.0" prefWidth="188.0" text="REPORTS" textFill="#0f9d58">
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </Label>
+            <AreaChart fx:id="areaChart" layoutX="14.0" layoutY="112.0" prefHeight="466.0" prefWidth="511.0" title="Best Selling Products">
+              <xAxis>
+                <CategoryAxis label="Products" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Amount (KES)" side="LEFT" />
+              </yAxis>
+            </AreaChart>
+            <PieChart fx:id="piechart" layoutX="580.0" layoutY="145.0" title="Inventory Stock" />
+         </children></AnchorPane>
+      <AnchorPane layoutY="68.0" prefHeight="622.0" prefWidth="147.0" style="-fx-background-color: #0f9d58;">
+         <children>
+            <JFXButton fx:id="salesBtn" onAction="#salesClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="     Sales" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@Sales.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Century Gothic" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="purchaseBtn" layoutY="67.0" onAction="#purchaseClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Purchases" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@purchase.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="inventoryBtn" layoutY="134.0" onAction="#inventoryClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Inventory" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="34.0">
+                     <image>
+                        <Image url="@inventory.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="reportsBtn" layoutY="268.0" onAction="#reportsClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="   Reports" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@reports.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="settingsBtn" layoutY="335.0" onAction="#settingsClicked" prefHeight="67.0" prefWidth="147.0" stylesheets="@mystyle.css" text="    Settings" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="accountsBtn" layoutX="-2.0" layoutY="201.0" onAction="#accountsClicked" prefHeight="67.0" prefWidth="152.0" stylesheets="@mystyle.css" text="    Accounts" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@accounts.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
